@@ -16,6 +16,26 @@
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+
+GAPPS_VARIANT := mini
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+# GAPPS_FORCE_MMS_OVERRIDES := true
+# GAPPS_FORCE_PIXEL_LAUNCHER := true
+GAPPS_EXCLUDED_PACKAGES += \
+		GoogleNow \
+		Hangouts
+# GAPPS_EXCLUDED_PACKAGES := Hangouts
+# GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_PRODUCT_PACKAGES += \
+	    	LatinImeGoogle \
+	    	Music2 \
+		Drive \
+		FitnessPrebuilt 
+#		GoogleHindiIME 
+#     		GoogleContacts
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi 280dpi hdpi tvdpi mdpi ldpi
